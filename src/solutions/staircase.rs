@@ -11,11 +11,14 @@
 //
 
 #[allow(dead_code)]
-fn staircase(step: i32) -> i32 {
-    match step {
+fn staircase(n: i32, x: &[i32]) -> i32 {
+    match n {
         0 => 1,
-        1 => 1,
-        _ => staircase(step - 1) + staircase(step - 2),
+        _ => x
+            .iter()
+            .filter(|&&i| i <= n)
+            .map(|&i| staircase(n - i, x))
+            .sum(),
     }
 }
 
@@ -25,10 +28,20 @@ mod tests {
     use super::*;
 
     #[test]
-    fn ok_input() {
-        assert_eq!(staircase(1), 1);
-        assert_eq!(staircase(2), 2);
-        assert_eq!(staircase(3), 3);
-        assert_eq!(staircase(4), 5);
+    fn ok_input_1_2() {
+        assert_eq!(staircase(1, &[1, 2]), 1);
+        assert_eq!(staircase(2, &[1, 2]), 2);
+        assert_eq!(staircase(3, &[1, 2]), 3);
+        assert_eq!(staircase(4, &[1, 2]), 5);
+    }
+
+    #[test]
+    fn ok_input_1_3() {
+        assert_eq!(staircase(1, &[1, 3]), 1);
+        assert_eq!(staircase(2, &[1, 3]), 1);
+        assert_eq!(staircase(3, &[1, 3]), 2);
+        assert_eq!(staircase(4, &[1, 3]), 3);
+        assert_eq!(staircase(5, &[1, 3]), 4);
+        assert_eq!(staircase(6, &[1, 3]), 6);
     }
 }
