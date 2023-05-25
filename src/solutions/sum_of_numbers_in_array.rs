@@ -9,21 +9,24 @@
 // Bonus: Can you do this in one pass?
 
 // Solution:
-// 1. Place the values in a set space(n)
-// 2. Loop over all elements in the array
-// 3. Check if there is a value which adds up to k in the constructed set O(n) (Assuming look-up is
-//    constant)
+// 1. Loop over all elements in the array
+// 2. For each element, check if the difference between the element and k is present in the array
+//    --> time complexity is O(n)
+// 3. Worst case scenario space complexity is O(n) (Assuming all elements are unique in the set)
 use std::collections::HashSet;
 
 #[allow(dead_code)]
 fn sum_of_numbers_in_array(arr: &[i32], k: i32) -> bool {
-    let numbers: HashSet<i32> = HashSet::from_iter(arr.iter().cloned());
+    let mut numbers: HashSet<i32> = HashSet::new();
 
     arr.iter().any(
         |&val| match (numbers.get(&(k - val)), numbers.get(&(val - k))) {
             (Some(_), _) => true,
             (_, Some(_)) => true,
-            (None, None) => false,
+            (None, None) => {
+                numbers.insert(val);
+                false
+            }
         },
     )
 }
