@@ -61,4 +61,9 @@ mod tests {
     fn test_mixed_false() {
         assert!(!sum_of_numbers_in_array(&[-1, 2, -3, 4], 10));
     }
+
+    #[test]
+    fn test_empty_array() {
+        assert!(!sum_of_numbers_in_array(&[], 10));
+    }
 }
