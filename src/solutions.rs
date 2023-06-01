@@ -1,3 +1,4 @@
+pub mod decodable_7;
 pub mod find_missing_positive_integer;
 pub mod product_of_elements_in_array;
 pub mod serialize_and_deserialize_tree;
