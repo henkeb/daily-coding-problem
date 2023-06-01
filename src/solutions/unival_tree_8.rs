@@ -146,8 +146,6 @@ mod tests {
         root.insert(2);
         root.insert(3);
 
-        println!("{root:?}");
-
         assert_eq!(
             root,
             BinaryTree::new(1)
