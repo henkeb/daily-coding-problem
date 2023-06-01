@@ -47,15 +47,15 @@ impl XORLinkedList {
         XORLinkedList { head_reference }
     }
 
-    fn insert(&mut self, val: usize) {
-        let mut new_node = Node::new(val);
-        new_node.deref_mut() = self.head_reference.xor;
+    fn insert(&mut self, _val: usize) {
+        // let mut new_node = Node::new(val);
+        // new_node.deref_mut() = self.head_reference.xor;
 
         if self.head_reference.xor != 0 {}
     }
 }
 
-fn xor<T>(x: &Node, y: &Node) -> usize {
+fn xor(x: &Node, y: &Node) -> usize {
     get_adress(x) ^ get_adress(y)
 }
 
@@ -63,12 +63,12 @@ fn get_adress<T>(element: &T) -> usize {
     usize::from_str_radix(format!("{:p}", element).trim_start_matches("0x"), 16).unwrap()
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn testing() {
-        // let a = Node {val: 1}
-    }
-}
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+//
+//     #[test]
+//     fn testing() {
+//         // let a = Node {val: 1}
+//     }
+// }
