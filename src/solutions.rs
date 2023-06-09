@@ -1,4 +1,5 @@
 pub mod p10_job_scheduler;
+pub mod p11_autocomplete;
 pub mod p12_staircase;
 pub mod p14_monte_carlo;
 pub mod p1_sum_of_numbers_in_array;
