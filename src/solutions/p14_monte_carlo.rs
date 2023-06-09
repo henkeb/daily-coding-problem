@@ -1,6 +1,11 @@
 // The area of a circle is defined as πr^2. Estimate π to 3 decimal places using a Monte Carlo method.
 //
 // Hint: The basic equation of a circle is x2 + y2 = r2.
+//
+// Solution:
+//
+// P(point inside circle) = Area(quarter circle) / Area(unit square) = pi/4 -->
+// pi = 4*P(point inside circle)
 
 use rand::{distributions::Uniform, prelude::Distribution};
 const CIRCLE_RADIUS: u8 = 1;
