@@ -4,9 +4,20 @@
 //
 // Hint: Try preprocessing the dictionary into a more efficient data structure to speed up queries.
 //
+// Naïve solution:
+//
+// Check if the start query matches with the start of the word.
+//
+// Better solution: Implement a trie data structure (will do that later)
 
 fn autocomplete<'a>(input: Vec<&'a str>, query: &'a str) -> Vec<&'a str> {
-    unimplemented!()
+    let mut output: Vec<&str> = vec![];
+    input.into_iter().for_each(|word| {
+        if word.starts_with(query) {
+            output.push(word)
+        }
+    });
+    output
 }
 
 #[cfg(test)]
