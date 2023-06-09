@@ -7,3 +7,4 @@ pub mod p4_find_missing_positive_integer;
 pub mod p6_xor_linked_list;
 pub mod p7_decodable;
 pub mod p8_unival_tree;
+pub mod p9_non_adjacent_numbers;
