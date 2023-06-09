@@ -4,6 +4,7 @@
 //
 // Solution:
 //
+// Relationship of probability of being inside the circle i.e. #uniform samples inside circle / #total samples is the following
 // P(point inside circle) = Area(quarter circle) / Area(unit square) = pi/4 -->
 // pi = 4*P(point inside circle)
 
