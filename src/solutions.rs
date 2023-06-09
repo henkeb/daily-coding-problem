@@ -1,4 +1,5 @@
 pub mod p12_staircase;
+pub mod p14_monte_carlo;
 pub mod p1_sum_of_numbers_in_array;
 pub mod p2_product_of_elements_in_array;
 pub mod p3_serialize_and_deserialize_tree;
